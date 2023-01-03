@@ -1,11 +1,14 @@
 import React from 'react';
-import './style.css';
 
-const Header = ({title}) => {
+import './styles.css';
+
+const Header = ({title, subTitle, children}) => {
   return (
-    <h1 className='header'>
-      {title}
-    </h1>
+    <div className="banner">
+      <h1>{title}</h1>
+      <h2>{subTitle}</h2>
+      {children}
+    </div>
   );
 };
 

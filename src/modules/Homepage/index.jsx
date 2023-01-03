@@ -8,9 +8,7 @@ import './styles.css';
 const Homepage = () => {
   return (
     <div className='homepage'>
-      <div className="banner">
-        <Header title='My GitHub Résumé'/>
-      </div>
+      <Header title='My GitHub Résumé'/>
       <UserInputBlock/>
     </div>
   );

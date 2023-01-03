@@ -1,0 +1,22 @@
+.banner {
+  margin: 2.5em 0 3em 0;
+  padding-bottom: 1.5em;
+  border-bottom: 1px solid #ccc;
+}
+
+.banner h1, .banner h2 {
+  font-size: 32px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.banner h2 {
+  font-size: 15px;
+  margin: 16px 0 0 0;
+}
+
+.banner p {
+  margin: 0;
+}
