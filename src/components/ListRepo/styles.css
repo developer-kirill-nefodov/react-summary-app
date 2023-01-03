@@ -1,0 +1,27 @@
+.list-repo-block {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  overflow: hidden;
+}
+
+.list-repo-item {
+  margin: 0 0 10px 0;
+}
+
+.list-repo-item h5 {
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+}
+
+.repo-link {
+  margin-left: 5px;
+}
+
+.name-repo {
+  color: #990003;
+  margin-bottom: 10px;
+  font-size: 20px;
+
+  text-decoration: none;
+}

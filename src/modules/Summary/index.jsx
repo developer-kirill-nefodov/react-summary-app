@@ -3,27 +3,46 @@ import React from 'react';
 import Header from "../../components/Header";
 import Loading from "../../components/Loading";
 import Error from "../../components/Error";
+import Languages from "../../components/Languages";
+import PublicRepos from "../../components/SummaryBlocks/PublicRepos";
+import ListRepo from "../../components/ListRepo";
 
 import useUserInGithub from "../../utils/hooks/useUserInGithub";
 
 const Summary = () => {
-  const [isLoading, isError, status, username] = useUserInGithub();
+  const [isLoading, isError, status, percents, user, repos] = useUserInGithub();
 
-  if(isError) {
+  if (isError) {
     return (
       <Error status={status}/>
     )
   }
 
-  return isLoading ? (
-    <Loading/>
-  ) : (
+  if (isLoading) {
+    return (
+      <Loading/>
+    )
+  }
+
+  return (
     <div className='summary'>
       <Header
-        title={username}
+        title={user.username}
         subTitle='Passionate GitHub user'
       />
-
+      <PublicRepos
+        user={user}
+        title='GitHub Profile'
+      />
+      <ListRepo
+        title='Latest activity'
+        username={user.username}
+        repos={repos}
+      />
+      <Languages
+        title='Languages'
+        percents={percents}
+      />
     </div>
   );
 };

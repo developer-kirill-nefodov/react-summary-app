@@ -17,7 +17,7 @@ const UserInputBlock = () => {
 
   return (
     <div>
-      <p className="text">
+      <p className="mt-0">
         Enter the nickname of your
         <a href="https://github.com" title="GitHub">
           GitHub

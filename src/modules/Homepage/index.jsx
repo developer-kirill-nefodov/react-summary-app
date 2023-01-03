@@ -3,8 +3,6 @@ import React from 'react';
 import Header from "../../components/Header";
 import UserInputBlock from "../../components/UserInputBlock";
 
-import './styles.css';
-
 const Homepage = () => {
   return (
     <div className='homepage'>

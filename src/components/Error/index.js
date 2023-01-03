@@ -14,7 +14,9 @@ const Error = ({status}) => {
     <div>
       <Header title={textError?.title}/>
       <Header>
-        <p>{textError?.text}</p>
+        <p className='m-o'>
+          {textError?.text}
+        </p>
       </Header>
     </div>
   );

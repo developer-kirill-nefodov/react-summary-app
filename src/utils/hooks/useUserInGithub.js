@@ -1,31 +1,55 @@
 import {useEffect, useState} from "react";
 import {useLocation} from "react-router-dom";
 
-import {getUserData} from "../api/user";
+import {getUserDataRepos, getUserData} from "../api";
+import usePercentLanguage from "./usePercentLanguage";
 
 const useUserInGithub = () => {
   const {pathname} = useLocation();
 
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [status, setStatus] = useState(200);
+  const [status, setStatus] = useState(0);
+  const [user, setUser] = useState({});
+  const [languages, setLanguages] = useState([]);
+  const [repos, setRepos] = useState([]);
 
-  const [username, setUsername] = useState('Chris Wanstrath');
-
+  const percents = usePercentLanguage(languages);
 
   useEffect(() => {
-    getUserData(pathname)
+    const username = pathname.split('/').pop();
+    getUserData(username)
       .then(({data}) => {
-        console.log(data)
-      })
-      .catch(() => {
-        setIsError(true);
+        setUser({
+          username: data.name,
+          public: data.public_repos,
+          create: data.created_at
+        });
         setIsLoading(false);
-        setStatus(404);
+      })
+      .catch((e) => {
+        setIsError(true);
+        setStatus(e.response.status);
       });
-  }, []);
+    getUserDataRepos(username)
+      .then(({data}) => {
+        if (!data.length) {
+          setIsError(true)
+          setStatus(200);
+        }
 
-  return [isLoading, isError, status, username];
+        setLanguages(data.map(e => e.languages_url));
+        setRepos(data.map(e => ({
+          name: e.name,
+          language: e.language,
+          date: e.date,
+          description: e.description,
+          homepage: e.homepage
+        })))
+      });
+  }, [pathname]);
+
+  return [isLoading, isError, status, percents, user, repos];
 };
 
 export default useUserInGithub;
