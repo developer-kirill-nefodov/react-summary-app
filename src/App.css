@@ -1,0 +1,24 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  color: #333;
+}
+
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  background: #3a6186;
+  background: -webkit-linear-gradient(to right, #89253e, #3a6186);
+  background: linear-gradient(to right, #89253e, #3a6186);
+}
+
+.WrapperCart {
+  width: 500px;
+  height: fit-content;
+  padding: 25px 40px;
+
+  background: #ffffff;
+}
