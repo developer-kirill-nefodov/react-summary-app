@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-summary-app/static/css/main.459674d5.css",
+    "main.js": "/react-summary-app/static/js/main.c95764bb.js",
+    "index.html": "/react-summary-app/index.html",
+    "main.459674d5.css.map": "/react-summary-app/static/css/main.459674d5.css.map",
+    "main.c95764bb.js.map": "/react-summary-app/static/js/main.c95764bb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.459674d5.css",
+    "static/js/main.c95764bb.js"
+  ]
+}
