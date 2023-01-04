@@ -3,12 +3,12 @@ import Summary from "./Summary";
 
 export const routes = [
   {
-    path: "/react-summary-app",
+    path: "/",
     exact: true,
     element: Homepage
   },
   {
-    path: "/react-summary-app/:username",
+    path: "/:username",
     exact: true,
     element: Summary
   }

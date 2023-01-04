@@ -12,7 +12,7 @@ const UserInputBlock = () => {
   }
 
   const submitUser = () => {
-    navigate(`/react-summary-app/${value}`)
+    navigate(`/${value}`)
   }
 
   return (
