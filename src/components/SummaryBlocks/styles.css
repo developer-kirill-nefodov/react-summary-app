@@ -19,7 +19,7 @@
 
 .public-block {
   padding: 0 20px;
-  min-width: 80%;
+  max-width: 80%;
 }
 
 .color-h4 {

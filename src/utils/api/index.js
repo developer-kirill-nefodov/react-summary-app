@@ -2,7 +2,6 @@ import axios from "axios";
 
 export const usersAPI = axios.create({
   baseURL: 'https://api.github.com/users',
-
 });
 
 export const customApi = axios.create();
