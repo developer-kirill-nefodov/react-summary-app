@@ -25,3 +25,11 @@
 .color-h4 {
   color: #0078ff;
 }
+
+
+@media (max-width: 600px) {
+  .block {
+    flex-direction: column;
+    align-items: center;
+  }
+}
