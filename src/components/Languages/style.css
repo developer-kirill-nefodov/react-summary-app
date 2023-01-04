@@ -2,3 +2,9 @@
   flex-basis: 80%;
   overflow: hidden;
 }
+
+@media (max-width: 600px) {
+  .wrapper-language {
+    width: 100%;
+  }
+}
