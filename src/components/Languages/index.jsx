@@ -44,7 +44,7 @@ const Languages = ({title, percents}) => {
   }, [percents]);
 
   return (
-    <TitleBlock title={title}>
+    <TitleBlock title={title} classN='m-0'>
       <div className='wrapper-language'>
         <Doughnut data={{labels, datasets: [{...datasets[0], data}]}}/>
       </div>

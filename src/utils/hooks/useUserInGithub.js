@@ -2,7 +2,6 @@ import {useEffect, useState} from "react";
 
 import {getUserDataRepos, getUserData} from "../api";
 import usePercentLanguage from "./usePercentLanguage";
-// import mock from '../api/mock.json';
 
 const useUserInGithub = ({username}) => {
   const [isError, setIsError] = useState(false);
@@ -15,8 +14,9 @@ const useUserInGithub = ({username}) => {
   const percents = usePercentLanguage(languages);
 
   useEffect(() => {
-    getUserData(username)
-      .then(({data}) => {
+    const dataUser = getUserData(username);
+    const dataRepos = getUserDataRepos(username);
+    dataUser.then(({data}) => {
         setUser({
           username: data.name,
           public: data.public_repos,
@@ -28,7 +28,7 @@ const useUserInGithub = ({username}) => {
         setIsError(true);
         setStatus(e.response.status);
       });
-    getUserDataRepos(username)
+    dataRepos
       .then(({data}) => {
         if (!data.length) {
           setIsError(true)
@@ -45,22 +45,6 @@ const useUserInGithub = ({username}) => {
         })))
         setIsLoading(false);
       });
-
-    // /** MOCK DA5A */
-    // setUser({
-    //   username: mock.user.name,
-    //   public: mock.user.public_repos,
-    //   create: mock.user.created_at
-    // });
-    // setLanguages(mock.repos.map(e => e.languages_url));
-    // setRepos(mock.repos.map(e => ({
-    //   name: e.name,
-    //   language: e.language,
-    //   date: e.date,
-    //   description: e.description,
-    //   homepage: e.homepage
-    // })));
-    // setIsLoading(false);
   }, [username]);
 
   return [isLoading, isError, status, percents, user, repos];

@@ -2,11 +2,11 @@ import React from 'react';
 
 import './styles.css';
 
-const TitleBlock = ({title, children}) => {
+const TitleBlock = ({title, classN = '', children}) => {
   return (
-    <div className='block'>
+    <div className={`block ${classN}`}>
       <div className='block-title'>
-        <h4 className='m-o color-h4'>{title}</h4>
+        <h4 className='m-0 color-h4'>{title}</h4>
       </div>
       {children}
     </div>
