@@ -6,7 +6,7 @@ const TitleBlock = ({title, children}) => {
   return (
     <div className='block'>
       <div className='block-title'>
-        <h4 className='m-o'>{title}</h4>
+        <h4 className='m-o color-h4'>{title}</h4>
       </div>
       {children}
     </div>

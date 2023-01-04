@@ -7,11 +7,11 @@ const ListRepo = ({title, repos, username}) => {
   return (
     <TitleBlock title={title}>
       <div className='list-repo-block'>
-        {repos.map((e) => (
-          <div className='list-repo-item'>
+        {repos.map((e, i) => (
+          <div className='list-repo-item' key={'ItemRepo' + i}>
             <div>
               <a target='_blank'
-                rel='noopener'
+                rel='noreferrer'
                 className='name-repo'
                 href={`https://github.com/${username}/${e.name}`}
               >
@@ -21,10 +21,10 @@ const ListRepo = ({title, repos, username}) => {
             {e.language} – Creator & Owner
             {e.date}
             {e.description}
-            <a className='mr-5'
+            <a className='ml-5 color-link'
               href={e.homepage}
               target='_blank'
-              rel='noopener'
+              rel='noreferrer'
             >
               {e.homepage}
             </a>

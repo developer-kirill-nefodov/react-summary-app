@@ -12,14 +12,14 @@ const UserInputBlock = () => {
   }
 
   const submitUser = () => {
-    navigate(`/${value}`)
+    navigate(`/react-summary-app/${value}`)
   }
 
   return (
     <div>
       <p className="mt-0">
         Enter the nickname of your
-        <a href="https://github.com" title="GitHub">
+        <a className='ml-5 mr-5 color-link' href="https://github.com" title="GitHub">
           GitHub
         </a>
         user in order to view the resume

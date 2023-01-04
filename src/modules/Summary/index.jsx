@@ -1,4 +1,5 @@
 import React from 'react';
+import {useParams} from "react-router-dom";
 
 import Header from "../../components/Header";
 import Loading from "../../components/Loading";
@@ -10,7 +11,8 @@ import ListRepo from "../../components/ListRepo";
 import useUserInGithub from "../../utils/hooks/useUserInGithub";
 
 const Summary = () => {
-  const [isLoading, isError, status, percents, user, repos] = useUserInGithub();
+  const {username} = useParams();
+  const [isLoading, isError, status, percents, user, repos] = useUserInGithub({username});
 
   if (isError) {
     return (
@@ -36,7 +38,7 @@ const Summary = () => {
       />
       <ListRepo
         title='Latest activity'
-        username={user.username}
+        username={username}
         repos={repos}
       />
       <Languages

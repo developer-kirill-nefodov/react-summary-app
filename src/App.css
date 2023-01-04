@@ -30,8 +30,16 @@ html, body {
   }
 }
 
+.color-link {
+  color: #0078ff;
+}
+
 .m-o {
   margin: 0;
+}
+
+.ml-5 {
+  margin-left: 5px;
 }
 
 .mr-5 {

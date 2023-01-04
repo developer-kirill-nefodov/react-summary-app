@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 
 import {getCustomApi} from "../api";
+// import mock from "../api/mock.json";
 
 const usePercentLanguage = (arr = []) => {
   const [isEnd, setIsEnd] = useState(false);
@@ -30,6 +31,16 @@ const usePercentLanguage = (arr = []) => {
         setIsEnd(true);
       }
     });
+
+    // /** Mock Data */
+    // Object.entries(mock.lang).map(([key, value]) => {
+    //   setTotal(e => e + value);
+    //   setObj((e) => ({
+    //     ...e,
+    //     [key]: e[key] ? e[key] + value : value
+    //   }))
+    // });
+    // setIsEnd(true);
   }, [arr]);
 
   useEffect(() => {
