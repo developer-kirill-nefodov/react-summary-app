@@ -22,7 +22,7 @@ const usePercentLanguage = (arr = []) => {
       Object.entries(obj).map(([key, value]) => {
         setPercent((obj) => ({
           ...obj,
-          [key]: Math.ceil((value / total) * 100)
+          [key]: Math.round((value / total) * 1000) / 10
         }));
       })
     }

@@ -22,7 +22,6 @@ const useUserInGithub = ({username}) => {
           public: data.public_repos,
           create: data.created_at
         });
-        setIsLoading(false);
       })
       .catch((e) => {
         setIsError(true);
